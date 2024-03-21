@@ -30,6 +30,10 @@ export default function Test(props) {
 }
 
 const rootEl = document.getElementById("root");
+if (rootEl) {
+  const root = ReactDOM.createRoot(rootEl);
+  root.render(<Test />);
+}
 const queryParams = new URLSearchParams(document.location.search);
 const input = queryParams.get("input");
 rootEl.innerHTML = input; // Noncompliant
